@@ -434,15 +434,17 @@ function(utils, events, params, selector, Embr, SC, $){
   }
 
   function playSoundCloudTrack(track){
-    sc_last_track = track;
-    sc_playing_track = {
-      "url":      track.permalink_url,
-      "artist":   track.user.username,
-      "title":    track.title,
-      "genre":    track.genre,
-      "duration": track.duration
+    if(track.kind == "track") {
+      sc_last_track = track;
+      sc_playing_track = {
+        "url":      track.permalink_url,
+        "artist":   track.user.username,
+        "title":    track.title,
+        "genre":    track.genre,
+        "duration": track.duration
+      }
+      SC.stream(track.uri, sm_options, onSoundCloudStreamReady);
     }
-    SC.stream(track.uri, sm_options, onSoundCloudStreamReady);
   }
 
 
