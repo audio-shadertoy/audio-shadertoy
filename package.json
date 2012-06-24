@@ -2,7 +2,7 @@
   "scripts": {
     "start": "app.js"
   },
-  "version": "0.0.0-55",
+  "version": "0.0.0-58",
   "engines": {
     "node": "0.6.x"
   },
@@ -12,5 +12,8 @@
   },
   "name": "audio-shadertoy",
   "subdomain": "ast",
-  "domains": [ "audioshader.net", "www.audioshader.net" ]
+  "domains": [
+    "audioshader.net",
+    "www.audioshader.net"
+  ]
 }
