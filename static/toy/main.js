@@ -279,13 +279,18 @@ function(utils, events, params, selector, Embr, SC, $){
 
   var code_dialog_save = document.getElementById("button-save");
 
+  var shader_info = {
+    author : ""
+  };
+
   function postCode(){
     // get lzma compressed
     params.lzmaCompress(code_text.value.trim(), 1, function(code_lzma){
 
       var shader_data = {
         code_lzma : code_lzma,
-        img : canvas.toDataURL()
+        img : canvas.toDataURL(),
+        author : shader_info.author
       };
 
       if(sc_playing_track){
@@ -527,6 +532,10 @@ function(utils, events, params, selector, Embr, SC, $){
         "track": function(value){
           if(value.slice(0, sc_url_prefix.length) == sc_url_prefix)
             loadSoundCloudTrack(value);
+        },
+        "author": function(value){
+          if(value !== "undefined")
+            shader_info.author = value;
         }
       });
 

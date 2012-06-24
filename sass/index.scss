@@ -45,7 +45,10 @@ body { }
     & .track {
       color:#999;
     }
-    & .artist {
+      & :hover {
+        color:#fff;
+      }
+    & .author {
       color:#555;
 
     }

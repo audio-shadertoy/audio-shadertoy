@@ -90,15 +90,17 @@ function($){
 
       if(shader.track.title) {
         html.push(
-          '<a title="', shader.track.artist, ' &mdash; ', shader.track.title, '" href="', shader.track.url, '">',
-          '<span class="track">', shader.track.title, '</span>',
-          '<br />',
-          '<span class="artist">', shader.track.artist, '<span>',
-
-          '</a>'
+          '<a href="', shader.track.url, '">',
+          '<span class="track">', shader.track.artist , ' &mdash; ', shader.track.title, '</span>',
+          '</a>',
+          '<br />'
         );
       } else {
-        html.push('<span class="track"></span>');
+        html.push('<span class="track"></span><br/>');
+      }
+
+      if (shader.author) {
+        html.push('<span class="author">', shader.author, '<span>')
       }
 
       html.push('</li>');

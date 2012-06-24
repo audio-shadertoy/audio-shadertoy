@@ -47,7 +47,9 @@
           box-shadow: rgba(255, 255, 220, 0.25) 0px 2px 20px; }
     #shaders li .track {
       color: #999; }
-    #shaders li .artist {
+    #shaders li :hover {
+      color: #fff; }
+    #shaders li .author {
       color: #555; }
 
 #loader {

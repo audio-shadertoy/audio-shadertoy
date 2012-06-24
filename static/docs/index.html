@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>audioshader.net | docs</title>
+  <title>audioshader.net / docs</title>
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/docs.css">
 </head>
@@ -18,8 +18,6 @@
 
 
 <header>
-
-  <h1>Docs</h1>
 
   <P>
   Audioshader.net allows you to create audio-reactive pixel shaders,
@@ -95,7 +93,7 @@ vec3 pixel(vec2 pos){
 
 
 
-  <section class="uniforms">
+  <section class="variables">
       <h3>Shader Variables</h3>
 
       <h4>Pixel Position <code>(vec2) pos</code></h4>
@@ -165,7 +163,16 @@ vec3 pixel(vec2 pos){
       <h4>Amplitude Right <code>(sampler2D) amp_right</code></h4>
       <p>Amplitude of the right audio channel as a sampler 2D texture.</p>
 
+      <h4>&Pi;<code>(constant float) PI</code></h4>
+      <p>Pi.</p>
+
+      <h4>2&Pi;<code>(constant float) TWOPI</code></h4>
+      <p>2 &times; Pi.</p>
+
+
   </section>
+
+
 
 
   <section class="links">

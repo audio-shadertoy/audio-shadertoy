@@ -18,7 +18,7 @@ app.configure(function(){
 
 // get shaders
 app.get("/get", function(req, res){
-  Shader.find({}, ["code_lzma", "date", "track", "short_id"])
+  Shader.find({}, ["code_lzma", "date", "track", "short_id", "author"])
     .skip(req.query["skip"])
     .limit(req.query["limit"])
     .sort("date", -1)
@@ -67,7 +67,7 @@ app.get("/short/:short_id",function(req, res){
 
 // get image by short_id
 app.get("/img/:short_id",function(req, res){
-  Shader.findOne({ short_id : req.params.short_id }, ['img'],
+  Shader.findOne({ short_id : req.params.short_id }, ["img"],
     function(err, shader){
       if (err) {
         res.send("Error fetching image for shader: " + req.params.short_id);
@@ -102,6 +102,7 @@ app.post("/save", function(req, res){
       short_id : generateID(iteration),
       code_lzma : req.body.code_lzma,
       img : req.body.img,
+      author : req.body.author,
       track : req.body.track
     });
     newShader.save(function (err) {
